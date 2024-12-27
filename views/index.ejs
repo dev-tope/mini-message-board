@@ -1,0 +1,47 @@
+<head>
+  <title>Mini Message Board</title>
+  <style>
+    .button {
+      background-color: green;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1> <%= title %> </h1>
+  <div>
+    <div>
+      <button class="button" onclick="redirectToNew()">New Message</button>
+    </div>
+    <hr>
+    <% if(messages.length < 1){ %> 
+      <p>You have no messages</p>
+    <% } %>
+    <% messages.forEach((message, id = 0) => { %>
+      Sender: <%= message.user %> 
+      <br>
+      Time: <%= message.added %>
+      <br>
+      Message: <%= message.text %>
+      <div>
+        <button id=<%= id %> onClick="redirectToPage('<%= id %>')">Open</button>
+      </div>
+      <hr>
+      <% id++ %>
+    <% }); %>
+  </div>
+  <script>
+    function redirectToPage(id) {
+      window.location.href = `/message/${id}`
+    }
+
+    function redirectToNew() {
+      window.location.href = `/new`
+    }
+  </script>
+</body>
+
