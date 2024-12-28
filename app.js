@@ -2,12 +2,13 @@ import express from "express";
 import path from "node:path";
 import url from "node:url";
 import { indexRouter } from "./routes/indexRouter.js";
+import 'dotenv/config'
 
 const __filename = url.fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 const app = express()
-const PORT = 3030
+const PORT = process.env.PORT || 8000;
 
 app.use(express.urlencoded({ extended: true }));
 
