@@ -9,7 +9,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node --watch app.js"
+    "dev": "node --watch app.js",
+    "db": "node db/populatedb.js",
+    "dbprod": "node db/populatedb.js postgres://topebush:H5ZFKtAp0SVO@ep-steep-snow-a2zla64z.eu-central-1.pg.koyeb.app/koyebdb"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +19,7 @@
   "dependencies": {
     "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "pg": "^8.13.1"
   }
 }

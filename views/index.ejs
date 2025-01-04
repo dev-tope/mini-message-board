@@ -21,17 +21,14 @@
     <% if(messages.length < 1){ %> 
       <p>You have no messages</p>
     <% } %>
-    <% messages.forEach((message, id = 0) => { %>
-      Sender: <%= message.user %> 
+    <% messages.forEach((message) => { %>
+      Sender: <%= message.username %> 
       <br>
-      Time: <%= message.added %>
+      Time: <%= message.time %>
       <br>
-      Message: <%= message.text %>
-      <div>
-        <button id=<%= id %> onClick="redirectToPage('<%= id %>')">Open</button>
-      </div>
+      Message: <%= message.message %>
       <hr>
-      <% id++ %>
+
     <% }); %>
   </div>
   <script>

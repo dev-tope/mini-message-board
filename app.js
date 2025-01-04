@@ -14,9 +14,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/', indexRouter)
 
-app.get('/new', (req, res) => {
-  res.send('new')
-})
 
 //VIEWS
 app.set('views', path.join(__dirname, 'views'))

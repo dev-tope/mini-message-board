@@ -1,4 +1,6 @@
 import { Router } from "express";
+import { getMessages, newMessageGet, newMessagePost } from "../controllers/indexController.js";
+
 
 const indexRouter = Router()
 
@@ -9,21 +11,11 @@ const messages = [
 
 console.log(typeof(messages))
 
-indexRouter.get('/', (req, res) => {
-  res.render('index', {title: 'Mini Message Board', messages: messages})
-})
+indexRouter.get('/', getMessages)
 
-indexRouter.get('/new', (req, res) => {
-  res.render('form')
-})
+indexRouter.get('/new', newMessageGet)
 
-indexRouter.post('/new', (req, res) => {
-  messages.push({ text: req.body.messageText, user: req.body.messageUser, added: new Date() })
-  res.redirect('/')
-})
+indexRouter.post('/new', newMessagePost)
 
-indexRouter.get('/message/:id', (req, res) => {
-  res.render('message', {id: req.params.id, messages: messages})
-})
 
 export { indexRouter }
