@@ -3,6 +3,7 @@ import path from "node:path";
 import url from "node:url";
 import { indexRouter } from "./routes/indexRouter.js";
 import 'dotenv/config'
+// console.trace("Tracing output source")
 
 const __filename = url.fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)

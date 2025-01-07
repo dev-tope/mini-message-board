@@ -9,7 +9,6 @@ const messages = [
   
 ];
 
-console.log(typeof(messages))
 
 indexRouter.get('/', getMessages)
 
